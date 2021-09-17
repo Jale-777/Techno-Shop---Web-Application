@@ -1,0 +1,48 @@
+.card {
+    width: 250px;
+    margin: 8px;
+    border: 1px solid white;
+
+    img {
+        width: 100%;
+    }
+
+    .picture {
+        height: 248px;
+        background-color: white;
+    }
+
+    h5 {
+        margin-top: 10px;
+    }
+
+    h5, p {
+        text-align: center;
+    }
+
+    p {
+        color: #333;
+        font-weight: 600;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(236, 236, 236);
+        border-color: #ec0e00;
+        p {
+            color: #ec0e00;
+        }
+    }
+}
+
+.remove-button {
+    position: absolute;
+    margin-left: -21px;
+    border: none;
+    background-color: white;
+
+    &:hover {
+        background-color: #ec0e00;
+        color: white;
+    }
+}

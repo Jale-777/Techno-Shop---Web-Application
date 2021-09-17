@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <div class="search-column" *ngIf="localSearchState">
+        <div (click)="update()" style="width:90vw; display: flex; justify-content: flex-end;"><i class="bi bi-x-lg"></i>
+        </div>
+        <div class="search-container">
+            <div class=" card" *ngFor="let result of searchArray" (click)="showDetails(result.id)">
+                <div class="picture">
+                    <img [src]="result.defaultImage" alt="">
+                </div>
+                <h5>{{result.name}}</h5>
+                <p> {{result.price}}KM</p>
+            </div>
+        </div>
+
+    </div>
+    <div *ngIf="!localSearchState">
+        <h3 class="mb-4 mt-5">Dobro došli u svijet tehnike i elektronskih uređaja</h3>
+        <img class="home-image mt-3 mb-3"
+            src="https://technoshop.ba/upload/rotator_element/thumb/philips-technoshop-aktivacija-08-2021_611e170a8db7f_1930x370c.jpg">
+        <h4 class="mb-5">Iz ponude izdvajamo</h4>
+        <div class="display-products">
+            <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+        </div>
+        <img class="mt-4 mb-4" class="home-image"
+            src="https://technoshop.ba/upload/rotator_element/thumb/web-roto-technoshop-akcija-back-to-school-1920x370_611513bcd60ea_1930x370c.jpg"
+            alt="">
+        <div class="display-products">
+            <app-product-card *ngFor="let product of products2" [product]="product"></app-product-card>
+        </div>
+        <div class="sponsor-images">
+            <img src="https://technoshop.ba/upload/2015/11/lg-logo_5638939de9ce9_120x40r_5648be6081ff2.jpg" alt="">
+            <img src="https://technoshop.ba/upload/2015/11/thumbs/philips_560514890a866_120x40r_5648beab236a7_230x250c.png"
+                alt="">
+            <img src="https://technoshop.ba/upload/2015/11/sony_56051474f3e49_120x40r_5648bf02a47b1.png" alt="">
+            <img src="https://technoshop.ba/upload/2015/11/sharp_560514a17022e_120x40r_5648bf385cee5.png" alt="">
+            <img src="https://technoshop.ba/upload/2015/11/electrolux-logo-2015_5631fcb3d3899_120x40r_5648bf8f6d182.png"
+                alt="">
+        </div>
+    </div>
+
+</div>

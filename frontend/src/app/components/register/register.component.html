@@ -1,0 +1,31 @@
+<form>
+    <h3>Registrujte se</h3>
+    <div class="mb-3">
+        <label class="form-label">Ime</label>
+        <input type="text" class="form-control" [(ngModel)]="user.first_name" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Prezime</label>
+        <input type="text" class="form-control" [(ngModel)]="user.last_name" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email adresa</label>
+        <input type="email" class="form-control" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Korisničko ime</label>
+        <input type="text" class="form-control" [(ngModel)]="user.username" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Lozinka</label>
+        <input type="password" class="form-control" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Adresa stanovanja</label>
+        <input type="text" class="form-control" [(ngModel)]="user.address" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="mb-3">
+        <p>Već posjedujete korisnički račun? <a href="/login">Prijavite se</a></p>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="saveUser()">Kreiraj račun</button>
+</form>

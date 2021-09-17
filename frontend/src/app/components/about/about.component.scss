@@ -1,0 +1,11 @@
+.wrapper {
+    margin: 100px auto;
+    width: 800px;
+
+    .images {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 40px 0;
+    }
+}

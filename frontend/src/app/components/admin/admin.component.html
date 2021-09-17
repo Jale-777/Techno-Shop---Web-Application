@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <div class="header-nav d-flex justify-content-evenly">
+        <div [class.active]="active == 'users'" (click)="active = 'users'" class="users-div d-flex">
+            <div class="text-users-div">
+                <h3>{{numberOfUsers}}</h3>
+                <p>Korisnici</p>
+            </div>
+            <div class="icon-users-div">
+                <i class="bi bi-people"></i>
+            </div>
+        </div>
+        <div [class.active]="active == 'products'" (click)="active = 'products'" class="products-div">
+            <div class="text-products-div">
+                <h3>{{ numberOfProducts }}</h3>
+                <p>Produkti</p>
+            </div>
+            <div class="icon-products-div">
+                <i class="bi bi-bag-plus"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-admin-products *ngIf="active == 'products'"></app-admin-products>
+<app-admin-users *ngIf="active == 'users'"></app-admin-users>

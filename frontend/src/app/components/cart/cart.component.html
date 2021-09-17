@@ -1,0 +1,11 @@
+<div class="display-products d-flex justify-content-center flex-wrap">
+    <app-product-card class="m-2" *ngFor="let product of cartProducts" [product]="product" [cart]="true"
+        (remove)="removeFromCart($event)">
+    </app-product-card>
+</div>
+<div class="text-center" *ngIf="!cartProducts?.length">
+    <h3 class="mt-5">Vaša korpa je prazna <i class="bi bi-emoji-frown"></i></h3>
+</div>
+<div *ngIf="cartProducts?.length" class="actions w-25 m-auto d-flex flex-column justify-content-center">
+    <button (click)="buyFromCart()" class="btn btn-success">Kupi odabrane proizvode</button>
+</div>

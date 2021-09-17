@@ -1,0 +1,35 @@
+<div class="small-container single-product">
+    <div class="d-flex wrapper">
+        <div class="col-2 ">
+            <img [src]="imageToDisplay" width="100%" id="ProductImg">
+
+            <div class="small-img-row">
+                <div class="small-img-col">
+                    <img [src]="productDetail.defaultImage" width="100%" class="small-img"
+                        (click)="changePicture('defaultImage')">
+                </div>
+                <div class="small-img-col">
+                    <img [src]="productDetail.image1" width="100%" class="small-img" (click)="changePicture('image1')">
+                </div>
+                <div class="small-img-col">
+                    <img [src]="productDetail.image2" width="100%" class="small-img" (click)="changePicture('image2')">
+                </div>
+                <div class="small-img-col">
+                    <img [src]="productDetail.image3" width="100%" class="small-img" (click)="changePicture('image3')">
+                </div>
+            </div>
+        </div>
+        <div class="col-2 about-prod">
+            <h1>{{ productDetail.name }}</h1>
+            <p *ngIf="productDetail.discount !== 0" class="old-price">{{ productDetail.price | currency: "KM " }}</p>
+            <h4>{{ productDetail.price-productDetail.discount | currency: "KM " }}</h4>
+            <div class="actions">
+                <a (click)="addToCart(productDetail.id)" class="cart-button">Dodaj u korpu</a>
+                <a (click)="addToFavorites(productDetail.id)"><i class="bi bi-heart-fill"></i></a>
+            </div>
+            <h3>Detalji</h3>
+            <br>
+            <p>{{ productDetail.description }}</p>
+        </div>
+    </div>
+</div>

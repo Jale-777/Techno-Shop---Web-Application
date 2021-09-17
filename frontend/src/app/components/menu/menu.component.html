@@ -1,0 +1,43 @@
+<div class="wrapper">
+    <div class="logo-div" (click)="removeSearch()">
+        <a routerLink="/home"><img src="https://www.asabanka.ba/wp-content/uploads/2020/12/Logo_TechnoShop-1.png"
+                alt=""></a>
+    </div>
+    <div class="links-div">
+        <ul class="menu">
+            <li (click)="removeSearch()"><a routerLink="/home" routerLinkActive="active">Naslovnica</a></li>
+            <li><a routerLink="/products" routerLinkActive="active">Produkti</a></li>
+            <li><a routerLink="/about" routerLinkActive="active">O nama</a></li>
+            <li><a routerLink="/contact" routerLinkActive="active">Kontakt</a></li>
+        </ul>
+    </div>
+    <form [formGroup]="form">
+        <div class="search-div mt-3" (click)="toggleSearchMode()">
+
+            <input (keyup)="search()" formControlName="searchInput" type="search" name="" id=""
+                placeholder="Pretraživanje...">
+            <button type="submit"><i class="bi bi-search"></i></button>
+        </div>
+    </form>
+    <div class="icons-div">
+        <ul class="menu">
+            <li><a routerLink="/cart" routerLinkActive="active"><i class="bi bi-cart3">
+                        <div *ngIf="numberOfCartProducts != 0" class="badge">{{numberOfCartProducts}}</div>
+                    </i></a>
+            </li>
+            <li><a routerLink="/favorites" routerLinkActive="active"><i class="bi bi-heart">
+                        <div *ngIf="allFavoritesProducts !=0" class="badge">{{allFavoritesProducts}}</div>
+                    </i></a></li>
+            <li (click)="showProfile(userService?.loggedUser?.id)" *ngIf="userService?.loggedUser.id"><a
+                    routerLink="/profile" routerLinkActive="active">{{ userService?.loggedUser?.first_name }} <i
+                        class="bi bi-person"></i></a>
+            </li>
+            <li *ngIf="userService?.loggedUser.id"><a routerLink="/login" (click)="logout()"><i
+                        class="bi bi-box-arrow-in-right"></i></a>
+            </li>
+            <li *ngIf="!userService?.loggedUser.id"><a routerLink="/login" routerLinkActive="active">Prijava</a></li>
+            <li *ngIf="userService?.loggedUser.role && userService?.loggedUser?.role == 'ADMIN'"><a routerLink="/admin"
+                    routerLinkActive="active"><i class="bi bi-shield-lock"></i></a></li>
+        </ul>
+    </div>
+</div>

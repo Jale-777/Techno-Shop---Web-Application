@@ -1,0 +1,8 @@
+<div (click)="showDetails(product.id)" class="card">
+    <div class="picture">
+        <img [src]="product.defaultImage" alt="">
+        <button class="remove-button" *ngIf="cart" (click)="removeEmit($event)">X</button>
+    </div>
+    <h5>{{ product.name }}</h5>
+    <p>{{ product.price-product.discount | currency: "KM " }}</p>
+</div>

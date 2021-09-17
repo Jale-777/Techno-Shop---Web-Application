@@ -1,0 +1,9 @@
+<div class="wrapper d-flex w-75">
+    <app-product-card class="m-2" *ngFor="let product of products" [product]="product" [cart]="true"
+        (remove)="removeFromFavorites($event)">
+    </app-product-card>
+
+    <div class="text-center" *ngIf="!products?.length">
+        <h3 class="mt-5">Omiljeni proizvodi prazni <i class="bi bi-emoji-frown"></i></h3>
+    </div>
+</div>
